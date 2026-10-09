@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Tural",
+        "age": 24,
+        "email": "tural@gmail.com",
+        "created_at": "2026-10-08T21:13:20"
+    },
+    {
+        "name": "Ayxan",
+        "age": 23,
+        "email": "aykhan@gmail.com",
+        "created_at": "2026-10-08T21:13:20"
+    },
+    {
+        "name": "Fuad",
+        "age": 27,
+        "email": "fuad@gmail.com",
+        "created_at": "2026-10-08T21:15:00"
+    },
+    {
+        "name": "Nicat",
+        "age": 22,
+        "email": "nicat@gmail.com",
+        "created_at": "2026-10-08T21:15:00"
+    }
+]
