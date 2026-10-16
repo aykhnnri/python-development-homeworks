@@ -1,0 +1,41 @@
+name: Generate Lesson 13 Homework PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-lesson13-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install ReportLab
+        run: pip install reportlab
+
+      - name: Generate Lesson 13 homework PDF
+        run: python tools/generate_lesson13_pdf.py
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lesson_13/Lesson_13_Homework.pdf
+          if git diff --cached --quiet; then
+            echo "No PDF changes to commit."
+          else
+            git commit -m "Add Lesson 13 error handling homework PDF"
+            git push
+          fi
